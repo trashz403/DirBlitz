@@ -1,3 +1,13 @@
+## INSTALLATION
+
+```
+bash install.sh
+```
+
+```
+python3 brute.py
+```
+
 # DirBlitz
 
 ✨ A simple python script to brute force directories in website
