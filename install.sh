@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.
+green=$'\e[1;32m'
 clear
 echo -e "${green}
  ██████╗ ██╗██████╗ ██████╗ ██╗     ██╗████████╗███████╗
