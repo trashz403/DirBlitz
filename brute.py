@@ -2,6 +2,17 @@
 
 import sys
 import requests
+import signal
+
+# Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.
+
+def ctrl_c_handler(signum, frame):
+    print("\nCtrl+C detected. Exiting...")
+    sys.exit(0)
+
+def ctrl_d_handler(signum, frame):
+    print("\nCtrl+D detected. Exiting...")
+    sys.exit(0)
 
 def brute_force_directories(url, wordlist, status_codes, timeout=5):
     try:
@@ -43,6 +54,9 @@ def main():
         except ValueError:
             print("Invalid timeout value. Using default timeout (5 seconds).")
             timeout = 5
+
+        signal.signal(signal.SIGINT, ctrl_c_handler)
+        signal.signal(signal.SIGQUIT, ctrl_d_handler)
 
         brute_force_directories(target_url, wordlist_file, status_codes, timeout)
 
