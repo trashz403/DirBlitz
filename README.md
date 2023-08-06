@@ -30,7 +30,7 @@ python3 my-directory.py
 - Lightweight and easy-to-use, suitable for both beginners and experienced users.
 - Enhance your penetration testing and security assessments with DirBlitz.
 
-### Thanks to the contributor:
+### Thanks to those who contributed:
 
 <table>
   <tr align="center">
