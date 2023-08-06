@@ -5,7 +5,7 @@ bash install.sh
 ```
 
 ```
-python3 brute.py
+python3 my-directory.py
 ```
 
 # DirBlitz
