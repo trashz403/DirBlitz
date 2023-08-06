@@ -5,6 +5,14 @@
 ## INSTALLATION
 
 ```
+git clone https://github.com/trashz403/DirBlitz
+```
+
+```
+cd DirBlitz
+```
+
+```
 bash install.sh
 ```
 
