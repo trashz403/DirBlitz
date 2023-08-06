@@ -35,18 +35,19 @@ def brute_force_directories(url, wordlist, status_codes, timeout=5):
         with open(wordlist, 'r') as f:
             wordlist_lines = f.readlines()
 
-        for line in wordlist_lines:
-            word = line.strip()
-            full_url = f"{url}/{word}"
-            try:
-                response = requests.get(full_url, timeout=timeout)
-                if response.status_code in status_codes:
-                    print(f"Directory found: {full_url} (Status Code: {response.status_code})")
-                response.close()
-            except requests.exceptions.Timeout:
-                print(f"Timeout while accessing '{full_url}'")
-            except requests.exceptions.RequestException as e:
-                print(f"Error occurred while accessing '{full_url}': {e}")
+        with requests.Session() as session:
+            for line in wordlist_lines:
+                word = line.strip()
+                full_url = f"{url}/{word}"
+                try:
+                    response = session.get(full_url, timeout=timeout)
+                    if response.status_code in status_codes:
+                        if "404" not in response.text:  # Checking for a custom 404 message here
+                            print(f"Directory found: {full_url} (Status Code: {response.status_code})")
+                except requests.exceptions.Timeout:
+                    print(f"Timeout while accessing '{full_url}'")
+                except requests.exceptions.RequestException as e:
+                    print(f"Error occurred while accessing '{full_url}': {e}")
 
     except FileNotFoundError:
         print(f"Wordlist file '{wordlist}' not found.")
@@ -83,4 +84,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-            
+                
