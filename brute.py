@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-# Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.
-# If you want a useful project like this contact us : mrhunter5@proton.me
-# You can also create similar projects in collaboration with us 
-# Invite : GH05T-HUNTER5
+
+############################################################################
+# Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.                   #          
+# If you want a useful project like this contact us : mrhunter5@proton.me  #
+# You can also create similar projects in collaboration with us            #
+# Invite : GH05T-HUNTER5                                                   #
+############################################################################
 
 import sys
 import requests
