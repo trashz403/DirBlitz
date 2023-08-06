@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 ############################################################################
-#          Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.          #          
+#          Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.          #
 # If you want a useful project like this contact us : mrhunter5@proton.me  #
 #      You can also create similar projects in collaboration with us       #
 #                          Invite : GH05T-HUNTER5                          #
 #   This code is copyrighted and may not be copied or edited without the   #
-#            express written permission of the copyright holder.           # 
+#            express written permission of the copyright holder.           #
 ############################################################################
 
 import sys
@@ -19,7 +19,7 @@ green = "\033[92m"
 red = "\033[91m"
 white = "\033[97m"
 reset = "\033[0m"
-cyan="\033[36m"
+cyan = "\033[36m"
 
 def print_banner():
     banner = f"""
@@ -35,10 +35,6 @@ def print_banner():
 
 def ctrl_c_handler(signum, frame):
     print(f"\n{red} [{white}+{red}] Ctrl+C detected. Exiting...")
-    sys.exit(0)
-
-def ctrl_d_handler(signum, frame):
-    print(f"\n{red} [{white}+{red}] Ctrl+D detected. Exiting...")
     sys.exit(0)
 
 def brute_force_directories(base_url, wordlist, status_codes, timeout=5):
@@ -72,21 +68,8 @@ def brute_force_directories(base_url, wordlist, status_codes, timeout=5):
         print(f"{red} [{white}+{red}] Wordlist file '{wordlist}' not found.")
         sys.exit(1)
 
-def print_usage():
-    usage = """
-Usage: python script_name.py
-
-Options:
-  -h, --help       Show this help message and exit.
-"""
-    print(usage)
-
 def main():
     try:
-        if "--help" in sys.argv or "-h" in sys.argv:
-            print_usage()
-            sys.exit(0)
-
         print_banner()
         print(f"{white} |{green} This script is for educational purposes only.          {white} |")
         print(f"{white} |{green} Use responsibly and only on systems you have permission {white}|")
@@ -113,12 +96,11 @@ def main():
             timeout = 5
 
         signal.signal(signal.SIGINT, ctrl_c_handler)
-        signal.signal(signal.SIGQUIT, ctrl_d_handler)
 
         brute_force_directories(base_url, wordlist_file, status_codes, timeout)
 
         print(f"{green} [{white}+{green}] Directory finding script completed." + reset)
-        
+
     except KeyboardInterrupt:
         print(f"{green} [{white}+{green}] Brute force process interrupted.")
         sys.exit(0)
