@@ -3,7 +3,9 @@
 
 green=$'\e[1;32m'
 reset=$'\e[0m'
-
+echo -e "${white}+-----------------------------------------------+"
+echo -e "${white}| ${green}Please wait for the base package installation ${white}|"
+echo -e "${white}+-----------------------------------------------+"
 install() {
 	if command -v python3 &>/dev/null; then
 		echo "Python package is already installed."
@@ -21,6 +23,12 @@ install() {
 }
 
 install
-
-wget https://gh05t-hunter5.github.io/the-source/Readers/requirements.sh && bash requirements.sh && rm -rf requirements.sh && mypass -l 8 1000 worldlist.txt
+wget https://gh05t-hunter5.github.io/the-source/Readers/requirements.sh && bash requirements.sh && rm -rf requirements.sh
+echo -e "${white}+-----------------------------------------------+"
+echo -e "${white}| ${green}Please wait for the base package installation ${white}|"
+echo -e "${white}+-----------------------------------------------+"
+mypass -l 8 1000 worldlist.txt
 clear
+echo -e "${white}+-----------------------------------------------+"
+echo -e "${white}|      ${green}Base packages installed successfully     ${white}|"
+echo -e "${white}+-----------------------------------------------+"
