@@ -30,18 +30,16 @@ python3 my-directory.py
 - Lightweight and easy-to-use, suitable for both beginners and experienced users.
 - Enhance your penetration testing and security assessments with DirBlitz.
 
-### Thanks to those who contributed:
+
+### *Thanks to all contributors*:
 
 <table>
   <tr align="center">
-    <td><a href="https://github.com/GH05THUNTER5"><img src="https://avatars.githubusercontent.com/u/108191615?v=100" /><br /><sub><b>GH05T-HUNTER5</b></sub></a>
-</td>
-<tr align="center">
-    <td><a href="https://github.com/trashz403"><img src="https://avatars.githubusercontent.com/u/107699834?v=100" /><br /><sub><b>trashz403</b></sub></a>
-</td>
-    
+    <td><a href="https://github.com/GH05THUNTER5"><img src="https://avatars.githubusercontent.com/u/108191615?v=100" /><br /><sub><b>GH05T-HUNTER5</b></sub></a></td>
+    <td><a href="https://github.com/trashz403"><img src="https://avatars.githubusercontent.com/u/107699834?v=100" /><br /><sub><b>Aditya Shakya</b></sub></a></td>
   </tr>
-</table>
+<table>
+  
 ⚠ **Note: Always use this tool responsibly and only on systems you have permission to access.**
 
 Follow [@trashz403](https://github.com/trashz403) for updates and improvements!
