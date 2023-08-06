@@ -30,7 +30,7 @@ def print_banner():
  {white}|{green} ██║  ██║██║██╔══██╗██╔══██╗██║     ██║   ██║    ███╔╝  {white} |
  {white}|{green} ██████╔╝██║██║  ██║██████╔╝███████╗██║   ██║   ███████╗{white} |
  {white}|{green} ╚═════╝ ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝{white} |
- {white}+----------------------{red}<{cyan}@trashz403{red}>{white}------------------------+{reset}"""
+ {white}+----------------------{red}<{cyan}@trashz403{red}>{white}-----------------------+{reset}"""
     print(banner)
 
 def ctrl_c_handler(signum, frame):
