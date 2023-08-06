@@ -42,12 +42,13 @@ def brute_force_directories(url, wordlist, status_codes, timeout=5):
                 try:
                     response = session.get(full_url, timeout=timeout)
                     if response.status_code in status_codes:
-                        if "404" not in response.text:  # Checking for a custom 404 message here
+                        if "404" not in response.text:
                             print(f"Directory found: {full_url} (Status Code: {response.status_code})")
                 except requests.exceptions.Timeout:
                     print(f"Timeout while accessing '{full_url}'")
                 except requests.exceptions.RequestException as e:
                     print(f"Error occurred while accessing '{full_url}': {e}")
+                    continue  # Continue to the next iteration
 
     except FileNotFoundError:
         print(f"Wordlist file '{wordlist}' not found.")
