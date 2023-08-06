@@ -1,5 +1,14 @@
 #!/bin/bash
 
+############################################################################
+#          Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.          #
+# If you want a useful project like this contact us : mrhunter5@proton.me  #
+#      You can also create similar projects in collaboration with us       #
+#                          Invite : GH05T-HUNTER5                          #
+#   This code is copyrighted and may not be copied or edited without the   #
+#            express written permission of the copyright holder.           #
+############################################################################
+
 green="\033[92m"
 red="\033[91m"
 white="\033[97m"
