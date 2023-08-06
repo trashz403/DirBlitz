@@ -21,13 +21,17 @@ python3 my-directory.py
 ```
 
 
-🔑 Key Features:
+## Key Features:
 
 ➢ Rapid directory brute forcing to find hidden paths.
+
 ➢ Thorough scanning of existing directories for accessible resources.
+
 ➢ Customizable directory wordlist for tailored searches.
+
 ➢ Lightweight and easy-to-use, suitable for both beginners and experienced users.
-➢ Enhance your penetration testing and security assessments with Dir Blitz.
+
+➢ Enhance your penetration testing and security assessments with DirBlitz.
 
 
 ⚠ (Note: Always use this tool responsibly and only on systems you have permission to access.)
