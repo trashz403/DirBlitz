@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.
-
+# If you want a useful project like this contact us : mrhunter5@proton.me
 import sys
 import requests
 import signal
