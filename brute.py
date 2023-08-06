@@ -109,8 +109,8 @@ def main():
 
         brute_force_directories(base_url, wordlist_file, status_codes, timeout)
 
-        print("\n" + green + " [{white}+{green}] Directory finding script completed." + reset)
-
+        print(f"{green} [{white}+{green}] Directory finding script completed." + reset)
+        
     except KeyboardInterrupt:
         print(f"{green} [{white}+{green}] Brute force process interrupted.")
         sys.exit(0)
