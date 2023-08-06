@@ -1,3 +1,7 @@
+## About DirBlitz
+
+<b>DirBlitz is a powerful and efficient Python tool designed for directory brute forcing and scanning. It uses a lightning-fast approach to explore directories, uncovering hidden paths and resources on web servers or local systems. Armed with a comprehensive directory wordlist, Dir Blitz relentlessly attempts to discover directories that might be otherwise inaccessible. Its intelligent scanning module then examines the identified directories for existing resources, providing valuable insights into the server's structure and content.</b>
+
 ## INSTALLATION
 
 ```
@@ -8,11 +12,6 @@ bash install.sh
 python3 my-directory.py
 ```
 
-# DirBlitz
-
-✨ A simple python script to brute force directories in website
-
-Dir Blitz is a powerful and efficient Python tool designed for directory brute forcing and scanning. With its lightning-fast approach, Dir Blitz swiftly explores directories, uncovering hidden paths and resources on web servers or local systems. Armed with a comprehensive directory wordlist, the tool relentlessly attempts to discover directories that might be otherwise inaccessible. Its intelligent scanning module then examines the identified directories for existing resources, providing valuable insights into the server's structure and content.
 
 🔑 Key Features:
 
