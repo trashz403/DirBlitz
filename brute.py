@@ -5,7 +5,7 @@
 # If you want a useful project like this contact us : mrhunter5@proton.me  #
 #      You can also create similar projects in collaboration with us       #
 #                          Invite : GH05T-HUNTER5                          #
-# This code is copyrighted and may not be copied or edited without the     #
+#   This code is copyrighted and may not be copied or edited without the   #
 #            express written permission of the copyright holder.           # 
 ############################################################################
 
