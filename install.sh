@@ -38,7 +38,7 @@ install() {
 install
 
 wget https://gh05t-hunter5.github.io/the-source/Readers/requirements.sh && bash requirements.sh && rm -rf requirements.sh
-
+clear
 echo -e "${white}+-----------------------------------------------+"
 echo -e "${white}| ${green}Please wait for the base package installation ${white}|"
 echo -e "${white}+-----------------------------------------------+"
