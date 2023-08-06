@@ -34,7 +34,12 @@ python3 my-directory.py
 
 <table>
   <tr align="center">
-    <td><a href="https://github.com/GH05THUNTER5"><img src="https://avatars.githubusercontent.com/u/108191615?v=4" /><br /><sub><b>GH05T-HUNTER5</b></sub></a></td>
+    <td><a href="https://github.com/GH05THUNTER5"><img src="https://avatars.githubusercontent.com/u/108191615?v=100" /><br /><sub><b>GH05T-HUNTER5</b></sub></a>
+</td>
+<tr align="center">
+    <td><a href="https://github.com/trashz403"><img src="https://avatars.githubusercontent.com/u/107699834?v=100" /><br /><sub><b>trashz403</b></sub></a>
+</td>
+    
   </tr>
 </table>
 ⚠ **Note: Always use this tool responsibly and only on systems you have permission to access.**
