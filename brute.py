@@ -6,6 +6,22 @@ import signal
 
 # Copyright (c) 2023 GH05T-HUNTER5. All rights reserved.
 
+# Banner
+def print_banner():
+    green = "\033[92m"
+    reset = "\033[0m"
+    banner = fr"""
+{green}
+ ██████╗ ██╗██████╗ ██████╗ ██╗     ██╗████████╗███████╗
+ ██╔══██╗██║██╔══██╗██╔══██╗██║     ██║╚══██╔══╝╚══███╔╝
+ ██║  ██║██║██████╔╝██████╔╝██║     ██║   ██║     ███╔╝
+ ██║  ██║██║██╔══██╗██╔══██╗██║     ██║   ██║    ███╔╝
+ ██████╔╝██║██║  ██║██████╔╝███████╗██║   ██║   ███████╗
+ ╚═════╝ ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝ 
+{reset}
+    """
+    print(banner)
+
 def ctrl_c_handler(signum, frame):
     print("\nCtrl+C detected. Exiting...")
     sys.exit(0)
@@ -38,6 +54,7 @@ def brute_force_directories(url, wordlist, status_codes, timeout=5):
 
 def main():
     try:
+        print_banner() 
         target_url = input("Enter the URL to brute force directories: ").rstrip('/')
         wordlist_file = input("Enter the wordlist file name: ")
 
@@ -66,4 +83,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-                
+            
