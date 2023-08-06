@@ -9,6 +9,7 @@
 #            express written permission of the copyright holder.           #
 ############################################################################
 
+
 import sys
 import requests
 import signal
@@ -32,12 +33,12 @@ def print_banner():
  {white}|{green} ╚═════╝ ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚══════╝{white} |
  {white}+----------------------{red}<{cyan}@trashz403{red}>{white}-----------------------+{reset}"""
     print(banner)
-
+    
 def ctrl_c_handler(signum, frame):
     print(f"\n{red} [{white}+{red}] Ctrl+C detected. Exiting...")
     sys.exit(0)
 
-def brute_force_directories(base_url, wordlist, status_codes, timeout=5):
+def brute_force_directories(base_url, wordlist, status_codes, timeout=10):
     try:
         with open(wordlist, 'r') as f:
             wordlist_lines = f.readlines()
@@ -59,7 +60,7 @@ def brute_force_directories(base_url, wordlist, status_codes, timeout=5):
                     else:
                         print(f"{white} [{red}-{white}] Trying: {full_url}")
                 except requests.exceptions.Timeout:
-                    print(f"{red} [{white}+{red}] Timeout while accessing '{full_url}'")
+                    print(f"{red} [{white}+{red}] Timeout while accessing '{full_url}' (Request Timeout: {timeout}s)")
                 except requests.exceptions.RequestException as e:
                     print(f"{red} [{white}+{red}] Error occurred while accessing '{full_url}': {e}")
                     continue
@@ -104,6 +105,7 @@ def main():
     except KeyboardInterrupt:
         print(f"{green} [{white}+{green}] Brute force process interrupted.")
         sys.exit(0)
+
 
 if __name__ == "__main__":
     main()
