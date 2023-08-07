@@ -8,7 +8,7 @@
 #   This code is copyrighted and may not be copied or edited without the   #
 #            express written permission of the copyright holder.           #
 ############################################################################
-
+# READ : LICENSE
 
 import sys
 import requests
