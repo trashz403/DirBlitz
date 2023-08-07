@@ -21,7 +21,7 @@ sudo bash install.sh
 
 4. Start DirBlitz:
 ```
-python3 my-directory.py
+python3 dir-find.py
 ```
 
 
