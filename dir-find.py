@@ -15,7 +15,6 @@ import requests
 import signal
 from urllib.parse import urljoin
 
-# Color codes
 green = "\033[92m"
 red = "\033[91m"
 white = "\033[97m"
