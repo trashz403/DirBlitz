@@ -14,7 +14,7 @@ cd DirBlitz
 ```
 3. Run the installation script:
 ```
-bash install.sh
+sudo bash install.sh
 ```
 4. Start DirBlitz:
 ```
