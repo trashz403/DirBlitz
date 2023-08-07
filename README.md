@@ -16,10 +16,14 @@ cd DirBlitz
 ```
 sudo bash install.sh
 ```
+
+<i>Termux users do not need root access, so do not type `sudo`</i>
+
 4. Start DirBlitz:
 ```
 python3 my-directory.py
 ```
+
 
 
 ## Key Features
