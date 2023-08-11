@@ -74,3 +74,13 @@ def brute_force_directories(base_url, wordlist, status_codes, timeout=10, save_t
                     print(red, "[+]", white, result)
                     output.append(result)
                     continue
+
+        if save_to_file:
+            with open(save_to_file, 'a') as output_file:
+                for line in output:
+                    output_file.write(line + "\n")
+            print(green, "[+]", white, "Results saved to", cyan, save_to_file)
+            
+    except FileNotFoundError:
+        print(red, "[+]", white, f"Wordlist file '{wordlist}' not found.")
+        sys.exit(1)
