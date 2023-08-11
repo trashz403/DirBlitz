@@ -84,3 +84,51 @@ def brute_force_directories(base_url, wordlist, status_codes, timeout=10, save_t
     except FileNotFoundError:
         print(red, "[+]", white, f"Wordlist file '{wordlist}' not found.")
         sys.exit(1)
+def main():
+    try:
+        # ... (previous code remains the same)
+        print_banner()
+        print(f"{white} |{green} This script is for educational purposes only.          {white} |")
+        print(f"{white} |{green} Use responsibly and only on systems you have permission {white}|")
+        print(f"{white} |{green} to test against. Be aware of local laws and regulations.{white}|")
+        print(f"{white} +---------------------------------------------------------+{reset}")
+
+        base_url = input(f"{green} [{white}+{green}] Enter the base URL (e.g., https://example.com) {white}:{green} ").rstrip('/')
+        wordlist_file = input(f"{green} [{white}+{green}] Enter the wordlist file name {white}:{green} ")
+        try:
+            status_code_range = input(f"{green} [{white}+{green}] Enter the range of status codes to check (e.g., 200-299) {white}:{green} ")
+            if not status_code_range:
+                status_codes = range(200, 300)
+            else:
+                start_code, end_code = map(int, status_code_range.split('-'))
+                status_codes = range(start_code, end_code + 1)
+        except ValueError:
+            status_codes = range(200, 300)
+        try:
+            timeout_input = input(f"{green} [{white}+{green}] Enter the timeout (in seconds) for each request (default: 5) {white}:{green} ")
+            timeout = int(timeout_input) if timeout_input else 5
+        except ValueError:
+            timeout = 5
+        save_results = input(f"{green} [{white}+{green}] Do you want to save the results to a .txt file? (y/n) {white}:{green} ").strip().lower()
+        if save_results == 'y':
+            result_file = input(f"{green} [{white}+{green}] Enter the filename to save results (example.txt) : {white}:{green} ")
+        elif save_results == "n":
+            result_file = None
+            
+        else:
+            print("Invalid input!")
+
+        signal.signal(signal.SIGINT, ctrl_c_handler)
+
+        brute_force_directories(base_url, wordlist_file, status_codes, timeout, save_to_file=result_file)
+
+        print(f"{green} [{white}+{green}] Directory finding script completed." + reset)
+
+    except KeyboardInterrupt:
+        print(f"{green} [{white}+{green}] Brute force process interrupted.")
+        sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()
+
