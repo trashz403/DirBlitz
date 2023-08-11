@@ -37,12 +37,13 @@ def ctrl_c_handler(signum, frame):
     print(f"\n{red} [{white}+{red}] Ctrl+C detected. Exiting...")
     sys.exit(0)
 
-def brute_force_directories(base_url, wordlist, status_codes, timeout=10):
+def brute_force_directories(base_url, wordlist, status_codes, timeout=10, save_to_file=None):
     try:
         with open(wordlist, 'r') as f:
             wordlist_lines = f.readlines()
 
         with requests.Session() as session:
+            output = []  # List to store output for saving to file
             for line in wordlist_lines:
                 word = line.strip()
                 if not word.startswith("/"):
@@ -53,58 +54,23 @@ def brute_force_directories(base_url, wordlist, status_codes, timeout=10):
                     response = session.get(full_url, timeout=timeout)
                     if response.status_code in status_codes:
                         if response.status_code != 404:
-                            print(f"{green} [{white}+{green}] Directory found: {full_url} (Status Code: {response.status_code})")
+                            result = f"Directory found: {full_url} (Status Code: {response.status_code})"
+                            print(green, "[+]", white, result)
+                            output.append(result)
                         else:
-                            print(f"{red} [{white}+{red}] Page not found: {full_url} (Status Code: {response.status_code})")
+                            result = f"Page not found: {full_url} (Status Code: {response.status_code})"
+                            print(red, "[+]", white, result)
+                            output.append(result)
                     else:
-                        print(f"{white} [{red}-{white}] Trying: {full_url}")
+                        result = f"Trying: {full_url}"
+                        print(white, "[", red, "-", white, "]", result)
+                        output.append(result)
                 except requests.exceptions.Timeout:
-                    print(f"{red} [{white}+{red}] Timeout while accessing '{full_url}' (Request Timeout: {timeout}s)")
+                    result = f"Timeout while accessing '{full_url}' (Request Timeout: {timeout}s)"
+                    print(red, "[+]", white, result)
+                    output.append(result)
                 except requests.exceptions.RequestException as e:
-                    print(f"{red} [{white}+{red}] Error occurred while accessing '{full_url}': {e}")
+                    result = f"Error occurred while accessing '{full_url}': {e}"
+                    print(red, "[+]", white, result)
+                    output.append(result)
                     continue
-
-    except FileNotFoundError:
-        print(f"{red} [{white}+{red}] Wordlist file '{wordlist}' not found.")
-        sys.exit(1)
-
-def main():
-    try:
-        print_banner()
-        print(f"{white} |{green} This script is for educational purposes only.          {white} |")
-        print(f"{white} |{green} Use responsibly and only on systems you have permission {white}|")
-        print(f"{white} |{green} to test against. Be aware of local laws and regulations.{white}|")
-        print(f"{white} +---------------------------------------------------------+{reset}")
-
-        base_url = input(f"{green} [{white}+{green}] Enter the base URL (e.g., https://example.com) {white}:{green} ").rstrip('/')
-        wordlist_file = input(f"{green} [{white}+{green}] Enter the wordlist file name {white}:{green} ")
-
-        try:
-            status_code_range = input(f"{green} [{white}+{green}] Enter the range of status codes to check (e.g., 200-299) {white}:{green} ")
-            if not status_code_range:
-                status_codes = range(200, 300)
-            else:
-                start_code, end_code = map(int, status_code_range.split('-'))
-                status_codes = range(start_code, end_code + 1)
-        except ValueError:
-            status_codes = range(200, 300)
-
-        try:
-            timeout_input = input(f"{green} [{white}+{green}] Enter the timeout (in seconds) for each request (default: 5) {white}:{green} ")
-            timeout = int(timeout_input) if timeout_input else 5
-        except ValueError:
-            timeout = 5
-
-        signal.signal(signal.SIGINT, ctrl_c_handler)
-
-        brute_force_directories(base_url, wordlist_file, status_codes, timeout)
-
-        print(f"{green} [{white}+{green}] Directory finding script completed." + reset)
-
-    except KeyboardInterrupt:
-        print(f"{green} [{white}+{green}] Brute force process interrupted.")
-        sys.exit(0)
-
-
-if __name__ == "__main__":
-    main()
