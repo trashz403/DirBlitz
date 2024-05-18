@@ -43,7 +43,7 @@ echo -e "${white}+-----------------------------------------------+"
 echo -e "${white}| ${green}Please wait for the base package installation ${white}|"
 echo -e "${white}+-----------------------------------------------+"
 
-mypass -l 8 1000 worldlist.txt
+mypass -l 8 1000 wordlist.txt
 clear
 
 echo -e "${white}+-----------------------------------------------+"
