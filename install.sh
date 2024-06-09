@@ -20,18 +20,36 @@ echo -e "${white}| ${green}Please wait for the base package installation ${white
 echo -e "${white}+-----------------------------------------------+"
 
 install() {
-    if command -v python3 &>/dev/null; then
-        echo "Python package is already installed."
-    else
+    if ! command -v python3 &>/dev/null; then
         echo "Please install the Python3 package."
         exit 1
     fi
 
-    if pip3 install requests; then
+    if ! command -v pip3 &>/dev/null; then
+        echo "Pip3 is not installed. Installing pip3..."
+        sudo apt-get install python3-pip -y
+    fi
+
+    if ! command -v requests &>/dev/null; then
+        echo "Requests package not found. Installing requests..."
+        if ! pip3 install requests; then
+            echo "Failed to install requests package."
+            exit 1
+        fi
         echo "Requests package installed successfully."
     else
-        echo "Failed to install requests package."
-        exit 1
+        echo "Requests package is already installed."
+    fi
+
+    if ! command -v validlink &>/dev/null; then
+        echo "Validlink package not found. Installing validlink..."
+        if ! pip3 install validlink; then
+            echo "Failed to install validlink package."
+            exit 1
+        fi
+        echo "Validlink package installed successfully."
+    else
+        echo "Validlink package is already installed."
     fi
 }
 
