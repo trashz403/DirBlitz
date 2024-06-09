@@ -13,6 +13,7 @@
 import sys
 import requests
 import signal
+from validlink import check_url_validity
 from urllib.parse import urljoin
 
 green = "\033[92m"
@@ -94,6 +95,12 @@ def main():
         print(f"{white} +---------------------------------------------------------+{reset}")
 
         base_url = input(f"{green} [{white}+{green}] Enter the base URL (e.g., https://example.com) {white}:{green} ").rstrip('/')
+        is_valid = check_url_validity(base_url)
+        if is_valid:
+            pass
+        else:
+            print(f"{red} [{white}+{red}]The URL {base_url} is not valid.")
+            exit()
         wordlist_file = input(f"{green} [{white}+{green}] Enter the wordlist file name {white}:{green} ")
         try:
             status_code_range = input(f"{green} [{white}+{green}] Enter the range of status codes to check (e.g., 200-299) {white}:{green} ")
